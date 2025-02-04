@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .weather-card {
+        transition: all 0.3s ease;
+      }
+      .weather-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="container p-6 mx-auto">
+      <!-- Main Grid Layout -->
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
+        <!-- Left Sidebar (Recent Searches) -->
+        <div
+          id="recentSearchesContainer"
+          class="p-6 bg-white shadow-lg lg:col-span-1 rounded-xl h-fit lg:sticky lg:top-6"
+        >
+          <h2 class="mb-4 text-xl font-bold text-blue-900">Recent Searches</h2>
+          <div id="recentSearchesList" class="space-y-2">
+            <!-- Recent searches will be populated here -->
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="space-y-6 lg:col-span-3">
+          <!-- Search Section -->
+          <div class="p-6 bg-white shadow-lg rounded-xl">
+            <div class="flex flex-col gap-4 md:flex-row">
+              <input
+                id="cityInput"
+                type="text"
+                class="w-full p-3 border-2 border-blue-200 rounded-lg focus:outline-none focus:border-blue-500"
+                placeholder="Enter city name"
+              />
+              <button
+                id="searchBtn"
+                class="px-6 py-3 text-white transition-colors bg-blue-500 rounded-lg hover:bg-blue-600"
+              >
+                Search
+              </button>
+              <button
+                id="currentLocationBtn"
+                class="px-6 py-3 text-white transition-colors bg-green-500 rounded-lg hover:bg-green-600"
+              >
+                Current Location
+              </button>
+            </div>
+          </div>
+
+          <!-- Current Weather Section -->
+          <div id="weatherInfo" class="p-6 bg-white shadow-lg rounded-xl">
+            <!-- Current weather data will be populated here -->
+          </div>
+
+          <!-- Forecast Section -->
+          <div class="p-6 bg-white shadow-lg rounded-xl">
+            <h2 class="mb-6 text-2xl font-bold text-blue-900"></h2>
+            <div
+              id="forecastInfo"
+              class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5"
+            >
+              <!-- Forecast cards will be populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
